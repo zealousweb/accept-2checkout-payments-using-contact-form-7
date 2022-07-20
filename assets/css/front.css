@@ -1,0 +1,23 @@
+/** Card Payment Styles */
+.card_payment_info { width: 100%; margin: 0; padding: 15px; border-radius: 0; border: 1px solid #fff; background-color: #f9f9f7; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
+.card_payment_info h4 { color: #000; font-size: 24px; font-style: normal; font-weight: 700; text-align: center; margin: 0 0 20px; }
+.card_payment_field_group { position: relative; width: 100%; margin: 0 0 15px; padding: 0; display: block; }
+.card_payment_field_group_flex { display: flex; flex-wrap: wrap; justify-content: space-between; }
+.card_payment_field_group_flex .card_payment_field_half { width: 50%; }
+.card_payment_field_label { width: 100%; margin: 0 0 5px; padding: 0; display: block; color: #000; font-size: 13px; font-weight: normal; font-style: normal; font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif; }
+.card_payment_field_element .cp_field_element { height: 40px; display: block; padding: 10px 15px; color: #000; font-size: 14px; font-weight: normal; font-style: normal; line-height: 1.4; letter-spacing: normal; display: block; border: 1px solid #ccc; background-color: #fff; }
+.card_payment_field_number #twocheckout_card_no { padding-left: 73px; padding-right: 35px; background: url(../images/cardimage.png), url(../images/cardimage.png); background-position: 15px -119px, calc(100% + 90px) -60px; background-repeat: no-repeat; background-size: 115px 447px, 120px 449px; }
+.card_payment_field_cvv .cp_field_cvv { width: 150px; }
+.card_payment_field_expire .card_payment_field_element { display: flex; }
+.card_payment_field_expire .card_payment_field_element select { min-width: 100px; margin-right: 15px; }
+.card_payment_field_expire .card_payment_field_element select:last-child { margin-right: 0; }
+.card_payment_field_group_flex .card_payment_field_auto { width: auto; }
+.card_payment_info .wpcf7-not-valid-tip { color: #f00; font-size: 13px; font-weight: normal; font-style: normal; font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif; }
+.card_payment_info .required { border:1px solid red; }
+
+
+/* Media Queries */
+@media screen and (max-width:480px) {
+	.card_payment_field_expire .card_payment_field_element select { min-width: auto; margin-right: 5px; }
+	.card_payment_field_cvv .cp_field_cvv { width: 70px; }
+}

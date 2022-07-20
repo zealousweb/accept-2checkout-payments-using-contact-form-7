@@ -1,0 +1,189 @@
+.cf72ch-tooltip {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	vertical-align: middle;
+	border-radius: 100%;
+	margin-left: 10px;
+	background-image: url(data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgZm9jdXNhYmxlPSJmYWxzZSIgZGF0YS1wcmVmaXg9ImZhcyIgZGF0YS1pY29uPSJpbmZvLWNpcmNsZSIgY2xhc3M9InN2Zy1pbmxpbmUtLWZhIGZhLWluZm8tY2lyY2xlIGZhLXctMTYiIHJvbGU9ImltZyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHBhdGggZmlsbD0iY3VycmVudENvbG9yIiBkPSJNMjU2IDhDMTE5LjA0MyA4IDggMTE5LjA4MyA4IDI1NmMwIDEzNi45OTcgMTExLjA0MyAyNDggMjQ4IDI0OHMyNDgtMTExLjAwMyAyNDgtMjQ4QzUwNCAxMTkuMDgzIDM5Mi45NTcgOCAyNTYgOHptMCAxMTBjMjMuMTk2IDAgNDIgMTguODA0IDQyIDQycy0xOC44MDQgNDItNDIgNDItNDItMTguODA0LTQyLTQyIDE4LjgwNC00MiA0Mi00MnptNTYgMjU0YzAgNi42MjctNS4zNzMgMTItMTIgMTJoLTg4Yy02LjYyNyAwLTEyLTUuMzczLTEyLTEydi0yNGMwLTYuNjI3IDUuMzczLTEyIDEyLTEyaDEydi02NGgtMTJjLTYuNjI3IDAtMTItNS4zNzMtMTItMTJ2LTI0YzAtNi42MjcgNS4zNzMtMTIgMTItMTJoNjRjNi42MjcgMCAxMiA1LjM3MyAxMiAxMnYxMDBoMTJjNi42MjcgMCAxMiA1LjM3MyAxMiAxMnYyNHoiPjwvcGF0aD48L3N2Zz4=);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.cf72ch-pointer .wp-pointer-content h3:before {
+	content: '\f348';
+}
+
+.cf72ch-settings .postbox {
+	box-sizing: border-box;
+}
+
+.cf72ch-settings .left-box {
+	padding: 10px;
+	margin-right: 2%;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.cf72ch-settings .select2 {
+	width: 100% !important;
+}
+
+@media ( min-width: 1285px ) {
+	.cf72ch-settings .left-box td {
+		width: 70%;
+		box-sizing: border-box;
+	}
+}
+
+@media ( min-width: 782px ) and ( max-width: 1284px ) {
+	.cf72ch-settings .left-box td {
+		width: 60%;
+		box-sizing: border-box;
+	}
+}
+
+#cf72ch_customer_details:not( :checked ) ~ .form-table .hide-show {
+	display: none;
+}
+
+.cf72ch-settings .left-box td input {
+	box-sizing: border-box;
+}
+
+.cf72ch-settings .form-field input[type=text]{
+	width:100%;
+}
+
+#contact-form-editor .cf72ch-settings .form-table th {
+	width: auto !important;
+}
+
+
+
+/* The Modal (background) */
+
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+}
+
+.modal .modal-dialog {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+/* Modal Content/Box */
+
+.modal-content {
+	margin: 0; /* 15% from the top and centered */
+	padding: 0;
+	padding-top: 5px;
+	background: linear-gradient(to right, #F79548 33.33%, #F05B89 33.34%, #F05B89 66.66%, #0074A2 66.67% );
+	max-width: 520px;
+	width: 90%; /* Could be more or less, depending on screen size */
+	font-size: 0;
+	position: relative;
+}
+.modal-content .inner-modal {
+	background-color: #f5f5f5;
+	padding: 20px;
+}
+
+.modal-content .modal-footer {
+	padding: 0 50px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.modal-content .modal-footer button,
+.modal-content .modal-footer a {
+	font-size: 16px;
+	padding: 10px 20px;
+	margin: 2px;
+	min-height: initial;
+	line-height: 1;
+	border: 0;
+	border-radius: 6px;
+	overflow: hidden;
+	color: #fff;
+	cursor: pointer;
+	font-weight: 700;
+	transition: 0.5s ease all;
+	background-color: #0074a2;
+}
+.modal-content .modal-footer button:hover,
+.modal-content .modal-footer a:hover {
+	background-color: #f05b89;
+	color: #fff;
+}
+.modal-content .modal-title {
+	font-size: 24px;
+	text-align: center;
+	margin: 0;
+	margin-bottom: 15px;
+}
+.modal-content .modal-body p {
+	text-align: center;
+	font-size: 18px;
+	margin-bottom: 20px;
+}
+.modal-content .bird-icon svg {
+	position: absolute;
+	bottom: 15px;
+	right: 15px;
+}
+
+/* The Close Button */
+.modal-content .close {
+	color: #ffffff;
+	font-size: 28px;
+	font-weight: bold;
+	line-height: 0;
+	padding: 0;
+	width: 26px;
+	height: 26px;
+	letter-spacing: 0;
+	margin: 0;
+	padding-bottom: 3px;
+	padding-left: 1px;
+	position: absolute;
+	top: 10px;
+	right: 5px;
+	background-color: #0074a2;
+	border: 0;
+	border-radius: 4px;
+	transition: 0.5s ease all;
+}
+.modal-content .close:hover {
+	background-color: #f05b89;
+	color: #fff;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (max-width: 480px){
+	.modal-content .bird-icon svg {
+		width: 50px;
+	}
+}
