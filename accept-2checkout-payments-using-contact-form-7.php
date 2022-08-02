@@ -63,7 +63,7 @@ if ( !defined( 'CF72CH_SUPPORT' ) ) {
 }
 
 if ( !defined( 'CF72CH_DOCUMENT' ) ) {
-	define( 'CF72CH_DOCUMENT', 'https://www.zealousweb.com/documentation/wordpress-plugins/accept-2checkout-payments-using-contact-form-7/' ); // Plugin Document Link
+	define( 'CF72CH_DOCUMENT', 'https://www.zealousweb.com/documentation/wordpress-plugins/accept-2checkout-payments-using-contact-form7/' ); // Plugin Document Link
 }
 
 if ( !defined( 'CF72CH_PRODUCT_LINK' ) ) {
