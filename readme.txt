@@ -45,7 +45,7 @@ We have released the PRO version of this plugin with extra advantageous features
 == Plugin Requirement ==
 
 PHP version : 5.6 and latest
-WordPress   : Wordpress 4.9 and latest
+WordPress   : Wordpress 4.9 and latest 
 
 <strong>[Get more information of Pro version here](https://www.zealousweb.com/store/accept-2checkout-payments-using-contact-form-7-pro)</strong>
 <strong>[Demo for Accept 2Checkout Payments Using Contact Form 7](https://www.zealousweb.com/store/accept-2checkout-payments-using-contact-form-7)</strong>
