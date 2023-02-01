@@ -10,3 +10,22 @@ This plugin helps you to accept payments on your Contact Form 7 using 2Checkout 
 5. Click ‘Activate Plugin’ to activate it.
 
 # How To Use
+You have to configure it from wp-admin > Contact > Add/Edit Contact Forms (Contact Form 7 needs to be activated before) to use this plugin.
+
+You will find a new tab, “2checkout,” along with Form, Mail, Messages, Additional Settings, where you can make all settings related to the 2checkout plugin.
+
+Note: You need to add the “2checkout & 2checkout Country” tag in your form. You will find a tag “2checkout” along with text, email, URL, etc.
+
+To use the 2checkout option, first, you need to create and save form tags.
+
+You can use the Country field tag option to display country in the drop-down if you are going with the custom approach, you need to set the drop-down value in ISO 3166 ( Examples: GB,IE, and DE ), so we prefer to use our tag to display country list.
+
+To add the 2Checkout payment form to your Contact Form 7, find the setting attributes given 
+below:
+
+
+
+
+
+# Getting Help
+If you have any difficulties while using this Plugin, please feel free to contact us at opensource@zealousweb.com. We also offer custom WordPress extension development and WordPress theme design services to fulfill your e-commerce objectives. Our professional dy‐ namic WordPress experts provide profound and customer-oriented development of your project within short timeframes. Thank you for choosing a Plugin developed by ZealousWeb!
