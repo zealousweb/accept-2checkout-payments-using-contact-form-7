@@ -81,7 +81,7 @@ Get Your Secret Key:
 
 - **Customer Billing Details**
 
-**1. First Name (required)**
+- **1. First Name (required)**
   - You have to select a name attribute for the first name field of contact form 7.
  
  
