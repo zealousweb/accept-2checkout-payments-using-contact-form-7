@@ -9,4 +9,4 @@ This plugin helps you to accept payments on your Contact Form 7 using 2Checkout 
 4. Go to the Plugin screen and find the newly uploaded Plugin in the list.
 5. Click ‘Activate Plugin’ to activate it.
 
-
+# How To Use
