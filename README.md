@@ -72,6 +72,17 @@ Get Your Secret Key:
  
  - **Select Currency (required)**
  You can select your currency of 2Checkout here. The default is set as USD(United States Dollar).
+ 
+  - **Success Return URL (optional)**
+ You can enter the URL of the page to redirect for a Successful 2Checkout Payment transaction.
+ 
+ - **Cancel Return URL (optional)**
+ You can enter the URL of the page to redirect if a transaction fails.
 
+- **Customer Billing Details**
+ 1. First Name (required)
+   You have to select a name attribute for the first name field of contact form 7.
+ 
+ 
 # Getting Help
 If you have any difficulties while using this Plugin, please feel free to contact us at opensource@zealousweb.com. We also offer custom WordPress extension development and WordPress theme design services to fulfill your e-commerce objectives. Our professional dy‐ namic WordPress experts provide profound and customer-oriented development of your project within short timeframes. Thank you for choosing a Plugin developed by ZealousWeb!
