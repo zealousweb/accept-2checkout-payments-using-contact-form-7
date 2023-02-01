@@ -18,14 +18,60 @@ Note: You need to add the “2checkout & 2checkout Country” tag in your form. 
 
 To use the 2checkout option, first, you need to create and save form tags.
 
+![Screenshot](resources/img/image-1.png)
+
 You can use the Country field tag option to display country in the drop-down if you are going with the custom approach, you need to set the drop-down value in ISO 3166 ( Examples: GB,IE, and DE ), so we prefer to use our tag to display country list.
 
-To add the 2Checkout payment form to your Contact Form 7, find the setting attributes given 
-below:
+2checkout Settings and Configuration
 
+![Screenshot](resources/img/image-2.png)
 
+2checkout Amount Field Configuration
 
+![Screenshot](resources/img/image-3.png)
 
+2checkout Payment Detail Page
+
+![Screenshot](resources/img/image-4.png)
+
+2checkout Transaction Detail Page
+
+![Screenshot](resources/img/image-5.png)
+
+To add the 2Checkout payment form to your Contact Form 7, find the setting attributes given below:
+
+- **Enable 2checkout Payment Form**
+ Check the 2checkout Payment Form option for 2checkout submit button activation.
+ 
+ - **Enable Debug Mode**
+ Check the Enable Debug Mode to start transaction debugging.
+ 
+  - **Payment Mode**
+ This option will allow you to set the Sandbox 2checkout payment process in test mode.
+ 
+ - **Merchant Code (required)**
+ This field is required when you want to take payment using 2checkout.
+ Get Your Merchant Code:
+ 
+![Screenshot](resources/img/image-6.png)
+
+- **Secret Key (required)**
+ This field is required when you want to take payment using 2checkout.
+Get Your Secret Key:
+
+![Screenshot](resources/img/image-7.png)
+
+ - **Amount Field Name (required)**
+ You have to select a name attribute for the amount field of Contact Form 7 like dropdown menu, textbox, hidden field, radio buttons, etc.
+ 
+ - **Quantity Field Name (optional)**
+ You have to select a name attribute for the quantity field of Contact Form 7 like dropdown menu, textbox, hidden field, radio buttons, etc.
+ 
+ - **Customer Email (required)**
+ You have to set a name attribute for the text field of contact form 7, from which you need to pass the custom email of the customer to the 2Checkout website.
+ 
+ - **Select Currency (required)**
+ You can select your currency of 2Checkout here. The default is set as USD(United States Dollar).
 
 # Getting Help
 If you have any difficulties while using this Plugin, please feel free to contact us at opensource@zealousweb.com. We also offer custom WordPress extension development and WordPress theme design services to fulfill your e-commerce objectives. Our professional dy‐ namic WordPress experts provide profound and customer-oriented development of your project within short timeframes. Thank you for choosing a Plugin developed by ZealousWeb!
