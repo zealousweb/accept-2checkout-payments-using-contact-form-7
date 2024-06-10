@@ -168,7 +168,7 @@ if ( !class_exists( 'CF72CH_Admin_Action' ) ){
 
 				case 'invoice_no' :
 					if( $data_ct ){
-						echo '<a href='.CF72CH_PRODUCT_LINK.' target="_blank">To unlock more features consider upgrading to PRO</a>';
+						echo '<a href='.esc_url(CF72CH_PRODUCT_LINK).' target="_blank">To unlock more features consider upgrading to PRO</a>';
 					}else{
 						echo (
 							!empty( get_post_meta( $post_id , '_invoice_no', true ) )
@@ -177,8 +177,8 @@ if ( !class_exists( 'CF72CH_Admin_Action' ) ){
 									!empty( CF72CH()->lib->response_status )
 									&& array_key_exists( get_post_meta( $post_id , '_invoice_no', true ), CF72CH()->lib->response_status)
 								)
-								? CF72CH()->lib->response_status[get_post_meta( $post_id , '_invoice_no', true )]
-								: trim( sanitize_text_field( get_post_meta( $post_id , '_invoice_no', true ) ) )
+								? esc_html(CF72CH()->lib->response_status[get_post_meta( $post_id , '_invoice_no', true )])
+								: esc_html(trim( sanitize_text_field( get_post_meta( $post_id , '_invoice_no', true ) ) ) )
 							)
 							: ''
 						);
@@ -187,7 +187,7 @@ if ( !class_exists( 'CF72CH_Admin_Action' ) ){
 
 				case 'order_id' :
 					if( $data_ct ){
-						echo '<a href='.CF72CH_PRODUCT_LINK.' target="_blank">To unlock more features consider upgrading to PRO</a>';
+						echo '<a href='.esc_url(CF72CH_PRODUCT_LINK).' target="_blank">To unlock more features consider upgrading to PRO</a>';
 					}else{
 						echo (
 							!empty( get_post_meta( $post_id , '_order_id', true ) )
@@ -196,8 +196,8 @@ if ( !class_exists( 'CF72CH_Admin_Action' ) ){
 									!empty( CF72CH()->lib->response_status )
 									&& array_key_exists( get_post_meta( $post_id , '_order_id', true ), CF72CH()->lib->response_status)
 								)
-								? CF72CH()->lib->response_status[get_post_meta( $post_id , '_order_id', true )]
-								: trim( sanitize_text_field( get_post_meta( $post_id , '_order_id', true ) ) )
+								? esc_html(CF72CH()->lib->response_status[get_post_meta( $post_id , '_order_id', true )] )
+								: esc_html(trim( sanitize_text_field( get_post_meta( $post_id , '_order_id', true ) ) ) )
 							)
 							: ''
 						);
@@ -206,7 +206,7 @@ if ( !class_exists( 'CF72CH_Admin_Action' ) ){
 
 				case 'transaction_status' :
 					if( $data_ct ){
-						echo '<a href='.CF72CH_PRODUCT_LINK.' target="_blank">To unlock more features consider upgrading to PRO</a>';
+						echo '<a href='.esc_url(CF72CH_PRODUCT_LINK).' target="_blank">To unlock more features consider upgrading to PRO</a>';
 					}else{
 						echo (
 							!empty( get_post_meta( $post_id , '_transaction_status', true ) )
@@ -215,8 +215,8 @@ if ( !class_exists( 'CF72CH_Admin_Action' ) ){
 									!empty( CF72CH()->lib->response_status )
 									&& array_key_exists( get_post_meta( $post_id , '_transaction_status', true ), CF72CH()->lib->response_status)
 								)
-								? CF72CH()->lib->response_status[get_post_meta( $post_id , '_transaction_status', true )]
-								: trim( sanitize_text_field( get_post_meta( $post_id , '_transaction_status', true ) ) )
+								? esc_html(CF72CH()->lib->response_status[get_post_meta( $post_id , '_transaction_status', true )] )
+								: esc_html(trim( sanitize_text_field( get_post_meta( $post_id , '_transaction_status', true ) ) ) )
 							)
 							: ''
 						);
@@ -225,9 +225,9 @@ if ( !class_exists( 'CF72CH_Admin_Action' ) ){
 
 				case 'total' :
 					if( $data_ct ){
-						echo '<a href='.CF72CH_PRODUCT_LINK.' target="_blank">To unlock more features consider upgrading to PRO</a>';
+						echo '<a href='.esc_url(CF72CH_PRODUCT_LINK).' target="_blank">To unlock more features consider upgrading to PRO</a>';
 					}else{
-						echo ( !empty( get_post_meta( $post_id , '_total', true ) ) ? trim( sanitize_text_field( get_post_meta( $post_id , '_total', true ) ) ) : '' );
+						echo ( !empty( get_post_meta( $post_id , '_total', true ) ) ? esc_html(trim( sanitize_text_field( get_post_meta( $post_id , '_total', true ) ) ) ) : '' );
 					}
 				break;
 
@@ -293,9 +293,9 @@ if ( !class_exists( 'CF72CH_Admin_Action' ) ){
 			$selected = ( isset( $_REQUEST['form-id'] ) ? sanitize_text_field( $_REQUEST['form-id'] ) : '' );
 
 			echo '<select name="form-id" id="form-id">';
-			echo '<option value="all">' . __( 'Select Forms', 'accept-2checkout-payments-using-contact-form-7' ) . '</option>';
+			echo '<option value="all">' . esc_html__( 'Select Forms', 'accept-2checkout-payments-using-contact-form-7' ) . '</option>';
 			foreach ( $posts as $post ) {
-				echo '<option value="' . $post->ID . '" ' . selected( $selected, $post->ID, false ) . '>' . $post->post_title  . '</option>';
+				echo '<option value="' . esc_attr($post->ID) . '" ' . selected( $selected, $post->ID, false ) . '>' . esc_html($post->post_title)  . '</option>';
 			}
 			echo '</select>';
 		}
@@ -337,7 +337,7 @@ if ( !class_exists( 'CF72CH_Admin_Action' ) ){
 		function action__cf72ch_postbox() {
 
 			echo '<div id="configuration-help" class="postbox">' .
-				apply_filters(
+			wp_kses_post(apply_filters(
 					CF72CH_PREFIX . '/help/postbox',
 					'<h3>' . __( 'Do you need help for configuration?', 'accept-2checkout-payments-using-contact-form-7' ) . '</h3>' .
 					'<p></p>' .
@@ -345,7 +345,7 @@ if ( !class_exists( 'CF72CH_Admin_Action' ) ){
 						'<li><a href="'.CF72CH_DOCUMENT.'" target="_blank">Refer the document.</a></li>' .
 						'<li><a href="'.CF72CH_SUPPORT.'" target="_blank">Contact Us</a></li>' .
 					'</ol>'
-				) .
+				) ).
 			'</div>';
 		}
 
@@ -359,7 +359,7 @@ if ( !class_exists( 'CF72CH_Admin_Action' ) ){
 		 * @method action__cf72ch_review_done
 		 */
 		function action__cf72ch_review_done(){
-			if( isset( $_POST['value'] ) && $_POST['value'] == 1 ){
+			if( isset( $_POST['value'] ) && $_POST['value'] == 1 ){ //phpcs:ignore
 				add_option( 'cf72ch_review', "1" );
 			}
 		}
@@ -396,7 +396,7 @@ if ( !class_exists( 'CF72CH_Admin_Action' ) ){
 				echo '<table><tbody>'.
 				'<style>.inside-field th{ text-align: left; }</style>';
 					echo'<tr class="inside-field"><th scope="row">You are using Free Accept 2Checkout Payments Using Contact Form 7 - no license needed. Enjoy! 🙂‚</th></tr>';
-					echo'<tr class="inside-field"><th scope="row"><a href='.CF72CH_PRODUCT_LINK.' target="_blank">To unlock more features consider upgrading to PRO.</a></th></tr>';
+					echo'<tr class="inside-field"><th scope="row"><a href='.esc_url(CF72CH_PRODUCT_LINK).' target="_blank">To unlock more features consider upgrading to PRO.</a></th></tr>';
 				echo '</tbody></table>';
 
 			}else{
@@ -425,7 +425,7 @@ if ( !class_exists( 'CF72CH_Admin_Action' ) ){
 
 								echo '<tr class="form-field">' .
 									'<th scope="row">' .
-										'<label for="hcf_author">' . __( sprintf( '%s', $value ), 'accept-2checkout-payments-using-contact-form-7' ) . '</label>' .
+										'<label for="hcf_author">' . esc_html__( sprintf( '%s', $value ), 'accept-2checkout-payments-using-contact-form-7' ) . '</label>' .
 									'</th>' .
 									'<td>' .
 										(
@@ -433,8 +433,8 @@ if ( !class_exists( 'CF72CH_Admin_Action' ) ){
 												'_form_id' == $key
 												&& !empty( get_the_title( get_post_meta( $post->ID, $key, true ) ) )
 											)
-											? get_the_title( get_post_meta( $post->ID, $key, true ) )
-											: trim( sanitize_text_field(  get_post_meta( $post->ID, $key, true ) ) )
+											? esc_html(get_the_title( get_post_meta( $post->ID, $key, true ) ) )
+											: esc_html(trim( sanitize_text_field(  get_post_meta( $post->ID, $key, true ) ) ) )
 										) .
 									'</td>' .
 								'</tr>';
@@ -445,7 +445,7 @@ if ( !class_exists( 'CF72CH_Admin_Action' ) ){
 							){
 								echo '<tr class="form-field">' .
 									'<th scope="row">' .
-										'<label for="hcf_author">' . __( sprintf( '%s', $value ), 'accept-2checkout-payments-using-contact-form-7' ) . '</label>' .
+										'<label for="hcf_author">' . esc_html__( sprintf( '%s', $value ), 'accept-2checkout-payments-using-contact-form-7' ) . '</label>' .
 									'</th>' .
 									'<td>' .
 										(
@@ -453,8 +453,8 @@ if ( !class_exists( 'CF72CH_Admin_Action' ) ){
 												!empty( CF72CH()->lib->response_status )
 												&& array_key_exists( get_post_meta( $post->ID , $key, true ), CF72CH()->lib->response_status )
 											)
-											? CF72CH()->lib->response_status[get_post_meta( $post->ID , $key, true )]
-											: trim( sanitize_text_field(  get_post_meta( $post->ID , $key, true ) ) )
+											? esc_html(CF72CH()->lib->response_status[get_post_meta( $post->ID , $key, true )] )
+											: esc_html(trim( sanitize_text_field(  get_post_meta( $post->ID , $key, true ) ) ) )
 										) .
 									'</td>' .
 								'</tr>';
@@ -465,7 +465,7 @@ if ( !class_exists( 'CF72CH_Admin_Action' ) ){
 
 								echo '<tr class="form-field">' .
 									'<th scope="row">' .
-										'<label for="hcf_author">' . __( sprintf( '%s', $value ), 'accept-2checkout-payments-using-contact-form-7' ) . '</label>' .
+										'<label for="hcf_author">' . esc_html__( sprintf( '%s', $value ), 'accept-2checkout-payments-using-contact-form-7' ) . '</label>' .
 									'</th>' .
 									'<td>' .
 										(
@@ -473,8 +473,8 @@ if ( !class_exists( 'CF72CH_Admin_Action' ) ){
 												!empty( CF72CH()->lib->response_status )
 												&& array_key_exists( get_post_meta( $post->ID , $key, true ), CF72CH()->lib->response_status )
 											)
-											? CF72CH()->lib->response_status[get_post_meta( $post->ID , $key, true )]
-											: trim( sanitize_text_field(  get_post_meta( $post->ID , $key, true ) ) )
+											? esc_html(CF72CH()->lib->response_status[get_post_meta( $post->ID , $key, true )] )
+											: esc_html(trim( sanitize_text_field(  get_post_meta( $post->ID , $key, true ) ) ) )
 										) .
 									'</td>' .
 								'</tr>';
@@ -486,7 +486,7 @@ if ( !class_exists( 'CF72CH_Admin_Action' ) ){
 
 								echo '<tr class="form-field">' .
 									'<th scope="row">' .
-										'<label for="hcf_author">' . __( sprintf( '%s', $value ), 'accept-2checkout-payments-using-contact-form-7' ) . '</label>' .
+										'<label for="hcf_author">' . esc_html__( sprintf( '%s', $value ), 'accept-2checkout-payments-using-contact-form-7' ) . '</label>' .
 									'</th>' .
 									'<td>' .
 										'<table>';
@@ -505,7 +505,7 @@ if ( !class_exists( 'CF72CH_Admin_Action' ) ){
 													if ( strpos( $key, 'two_checkout-' ) === false ) {
 														echo '<tr class="inside-field">' .
 															'<th scope="row">' .
-																__( sprintf( '%s', $key ), 'accept-2checkout-payments-using-contact-form-7' ) .
+																esc_html__( sprintf( '%s', $key ), 'accept-2checkout-payments-using-contact-form-7' ) .
 															'</th>' .
 															'<td>' .
 																(
@@ -513,8 +513,8 @@ if ( !class_exists( 'CF72CH_Admin_Action' ) ){
 																		!empty( $attachment )
 																		&& array_key_exists( $key, $attachment )
 																	)
-																	? '<a href="' . esc_url( home_url( str_replace( $root_path, '/', $attachment[$key] ) ) ) . '" target="_blank" download>' . __( sprintf( '%s', substr($attachment[$key], strrpos($attachment[$key], '/') + 1) ), 'accept-2checkout-payments-using-contact-form-7' ) . '</a>'
-																	: __( sprintf( '%s', ( is_array($value) ? implode( ', ', $value ) :  $value ) ), 'accept-2checkout-payments-using-contact-form-7' )
+																	? '<a href="' . esc_url( home_url( str_replace( $root_path, '/', $attachment[$key] ) ) ) . '" target="_blank" download>' . esc_html__( sprintf( '%s', substr($attachment[$key], strrpos($attachment[$key], '/') + 1) ), 'accept-2checkout-payments-using-contact-form-7' ) . '</a>'
+																	: esc_html__( sprintf( '%s', ( is_array($value) ? implode( ', ', $value ) :  $value ) ), 'accept-2checkout-payments-using-contact-form-7' )
 																) .
 															'</td>' .
 														'</tr>';
@@ -533,12 +533,12 @@ if ( !class_exists( 'CF72CH_Admin_Action' ) ){
 
 								echo '<tr class="form-field">' .
 									'<th scope="row">' .
-										'<label for="hcf_author">' . __( sprintf( '%s', $value ), 'accept-2checkout-payments-using-contact-form-7' ) . '</label>' .
+										'<label for="hcf_author">' . esc_html__( sprintf( '%s', $value ), 'accept-2checkout-payments-using-contact-form-7' ) . '</label>' .
 									'</th>' .
 									'<td>' .
 										'<code style="word-break: break-all;">' .
 											(
-												trim( sanitize_text_field(  get_post_meta( $post->ID , $key, true ) ) )
+												esc_html(trim( sanitize_text_field(  get_post_meta( $post->ID , $key, true ) ) ) )
 											) .
 										'</code>' .
 									'</td>' .
@@ -556,13 +556,13 @@ if ( !class_exists( 'CF72CH_Admin_Action' ) ){
 		 */
 		function cf72ch_show_help_data() {
 			echo '<div id="cf72ch-data-help">' .
-				apply_filters(
+			wp_kses_post(apply_filters(
 					CF72CH_PREFIX . '/help/'.CF72CH_POST_TYPE.'/postbox',
 					'<ol>' .
 						'<li><a href="'.CF72CH_DOCUMENT.'" target="_blank">Refer the document.</a></li>' .
 						'<li><a href="'.CF72CH_SUPPORT.'" target="_blank">Contact Us</a></li>' .
 					'</ol>'
-				) .
+				) ) .
 			'</div>';
 		}
 		

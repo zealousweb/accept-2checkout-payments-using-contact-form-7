@@ -1,14 +1,16 @@
 === Accept 2Checkout Payments Using Contact Form 7 ===
 Contributors: zealopensource
 Donate link: http://www.zealousweb.com/payment/
-Tags: e-commerce, payment gateway, WordPress, two checkout server, 2checkout, contact form 7, checkout
-Requires at least: 4.9
-Tested up to: 5.6.2
+Tags: e-commerce, payment gateway, WordPress, 2checkout, contact form 7
+Requires at least: 3.0.1
+Tested up to: 6.5
 Requires PHP: 5.6
-Stable tag: 1.2
+Stable tag: 1.3
 License: GPLv3 or later License
-Version: 1.2
+Version: 1.3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
+
+The 2Checkout Payment system provides a secure, simple means of authorizing credit and debit card transactions from your website.
 
 == Description ==
 
@@ -42,10 +44,22 @@ We have released the PRO version of this plugin with extra advantageous features
 * Facility to import, export the list of entire 2Checkout unlimited Entries.
 * In the list of 2Checkout forms entry in the admin side, you can view payment transactions unlimited Entries.
 
+== OUR OTHER PLUGINS ==
+
+* <strong>[Accept PayPal Payments Using Contact Form 7 Pro](https://store.zealousweb.com/wordpress-plugins/accept-paypal-payments-using-contact-form-7-pro)</strong>
+* <strong>[Accept Stripe Payments Using Contact Form 7 Pro](https://store.zealousweb.com/wordpress-plugins/accept-stripe-payments-using-contact-form-7-pro)</strong>
+* <strong>[Accept Authorize.NET Payments Using Contact Form 7 Pro](https://store.zealousweb.com/accept-authorize-net-payments-using-contact-form-7)</strong>
+* <strong>[Accept Elavon Payments Using Contact Form 7 Pro](https://store.zealousweb.com/accept-elavon-payments-using-contact-form-7-pro)</strong>
+* <strong>[Accept 2Checkout Payments Using Contact Form 7 Pro](https://store.zealousweb.com/wordpress-plugins/accept-2checkout-payments-using-contact-form-7-pro)</strong>
+* <strong>[Accept Sage Pay Payments Using Contact Form 7 Pro](https://store.zealousweb.com/wordpress-plugins/accept-sage-pay-payments-using-contact-form-7-pro)</strong>
+* <strong>[User Registration Using Contact Form 7 Pro](https://store.zealousweb.com/wordpress-plugins/user-registration-using-contact-form-7-pro)</strong>
+* <strong>[Abandoned Contact Form 7 Pro](https://store.zealousweb.com/wordpress-plugins/abandoned-contact-form-7-pro)</strong>
+* <strong>[Custom Product Options WooCommerce Pro](https://store.zealousweb.com/wordpress-plugins/custom-product-options-woocommerce-pro)</strong>
+
 == Plugin Requirement ==
 
 PHP version : 5.6 and latest
-WordPress   : Wordpress 4.9 and latest
+WordPress   : Wordpress 3.0.1 and latest
 
 == Installation ==
 Installing the plugin is easy. Just follow these steps:
@@ -64,7 +78,7 @@ Furthermore, suppose you need technical assistance to integrate ‘Accept 2Check
 
 We also offer custom WordPress extension development and WordPress theme design services to fulfill your e-commerce objectives.
 
-Thank you for choosing a Plugin developed by 
+Thank you for choosing a Plugin developed by  
 <strong>[ZealousWeb](https://www.zealousweb.com)</strong>!
 
 == Frequently Asked Questions ==
@@ -91,12 +105,15 @@ To display 2checkout payment information after successful payment, you need to a
 
 == Changelog ==
 
-= 1.0.0 =
-* Initial Release
+= 1.3 =
+* Fix Amount Field Error Msg issue
+
+= 1.2 =
+* Fix minor bugs and improve functionality
 
 = 1.1 =
 * Compatibility with new cf7 version
 * Fix minor bugs and improve functionality
 
-= 1.2 =
-* Fix minor bugs and improve functionality
+= 1.0.0 =
+* Initial Release

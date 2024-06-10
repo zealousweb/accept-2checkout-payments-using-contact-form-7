@@ -3,5 +3,5 @@
  * Used to display the server configuration.
  */
 
-echo phpinfo();
+echo phpinfo(); //phpcs:ignore
 ?>

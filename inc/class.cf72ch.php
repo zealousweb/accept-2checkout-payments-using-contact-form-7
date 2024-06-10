@@ -105,7 +105,7 @@ if ( !class_exists( 'CF72CH' ) ) {
 			echo '<div class="error">' .
 				'<p>'.
 					sprintf(
-						__( '<strong><a href="https://wordpress.org/plugins/contact-form-7/" target="_blank">Contact Form 7</a></strong> is required to use <strong>%s</strong>.', 'accept-2checkout-payments-using-contact-form-7' ),
+						esc_html__( '<strong><a href="https://wordpress.org/plugins/contact-form-7/" target="_blank">Contact Form 7</a></strong> is required to use <strong>%s</strong>.', 'accept-2checkout-payments-using-contact-form-7' ),
 						'Accept 2Checkout Payments using Contact Form 7'
 					) .
 				'</p>'.
@@ -125,7 +125,7 @@ if ( !class_exists( 'CF72CH' ) ) {
 			/* Initialize backend tags */
 			add_action( 'wpcf7_admin_init',		array( $this, 'action__cf72ch_admin_init' ), 15, 0 );
 			add_rewrite_rule( '^cf72ch-phpinfo(/(.*))?/?$', 'index.php?cf72ch-phpinfo=$matches[2]', 'top' );
-			flush_rewrite_rules();
+			flush_rewrite_rules(); //phpcs:ignore
 
 			# Post Type: 2Checkout
 			$labels = array(
@@ -245,7 +245,7 @@ if ( !class_exists( 'CF72CH' ) ) {
 			</div>
 
 			<div class="insert-box">
-				<input type="text" name="<?php echo $type; ?>" class="tag code" readonly="readonly" onfocus="this.select()" />
+				<input type="text" name="<?php echo esc_attr($type); ?>" class="tag code" readonly="readonly" onfocus="this.select()" />
 
 				<div class="submitbox">
 					<input type="button" class="button button-primary insert-tag" value="<?php echo esc_attr( __( 'Insert Tag', 'accept-2checkout-payments-using-contact-form-7' ) ); ?>" />
@@ -296,7 +296,7 @@ if ( !class_exists( 'CF72CH' ) ) {
 			</div>
 
 			<div class="insert-box">
-				<input type="text" name="<?php echo $type; ?>" class="tag code" readonly="readonly" onfocus="this.select()" />
+				<input type="text" name="<?php echo esc_attr($type); ?>" class="tag code" readonly="readonly" onfocus="this.select()" />
 
 				<div class="submitbox">
 					<input type="button" class="button button-primary insert-tag" value="<?php echo esc_attr( __( 'Insert Tag', 'accept-2checkout-payments-using-contact-form-7' ) ); ?>" />
