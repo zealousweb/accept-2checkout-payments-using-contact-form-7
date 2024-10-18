@@ -5,6 +5,23 @@ The 2Checkout system provides a straightforward payment interface for the custom
 
 This plugin helps you to accept payments on your Contact Form 7 using 2Checkout Accounts.
 
+**Features of Accept 2Checkout Payments Using Contact Form 7**
+
+- Supports 25 currencies Payment option.
+- In the Free version of 2Checkout, you can view the payment transactions of up to 10 Entries in the admin panel.
+- Create multiple payment forms using Contact Form 7.
+- Supports multiple forms on a single post or page.
+- Permits to take values from all input fields including drop-down menu, textbox, hidden field, radio buttons, etc.
+- Accepts dynamic value from frontend for parameters like item description, amount, email, and quantity.
+- Option to Enable 2Checkout Sandbox Mode to ensure the functioning of the payment transactions.
+- Saves Contact Form 7 payment data into the database.
+- You can view 2Checkout payment data details from the Admin side.
+- Option to export the Contact Form 7 payment data to CSV.
+- All filters and search facilities are available at the admin side.
+- Individual emails are sent to customers and admin after the 2Checkout payment transaction.
+- You can set ‘Success Return URL’ and ‘Cancel Return URL’ pages to redirect after the payment transaction. You can display payment details using shortcode adding in the Success & Cancel page [two-checkout-details].
+- You can use the Country field Tag option to display country in the drop-down; if you are working with the custom approach, you need to set the drop-down value in ISO 3166 ( Examples: GB, IE, and DE ), so we prefer to use our tag to display country list.
+
 # Installation
 1. Download the plugin zip file from WordPress.org plugin site to your desktop / PC
 2. If the file is downloaded as a zip archive, extract the plugin folder to your desktop.
