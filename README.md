@@ -22,6 +22,8 @@ This plugin helps you to accept payments on your Contact Form 7 using 2Checkout 
 - You can set ‘Success Return URL’ and ‘Cancel Return URL’ pages to redirect after the payment transaction. You can display payment details using shortcode adding in the Success & Cancel page [two-checkout-details].
 - You can use the Country field Tag option to display country in the drop-down; if you are working with the custom approach, you need to set the drop-down value in ISO 3166 ( Examples: GB, IE, and DE ), so we prefer to use our tag to display country list.
 
+[Learn more about the Pro version](https://store.zealousweb.com/generate-pdf-using-contact-form-7-pro)
+
 # Installation
 1. Download the plugin zip file from WordPress.org plugin site to your desktop / PC
 2. If the file is downloaded as a zip archive, extract the plugin folder to your desktop.
