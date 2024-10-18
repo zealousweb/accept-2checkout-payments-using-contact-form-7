@@ -25,6 +25,7 @@ This plugin helps you to accept payments on your Contact Form 7 using 2Checkout 
 [Learn more about the Pro version](https://store.zealousweb.com/generate-pdf-using-contact-form-7-pro)
 
 **Features of Accept 2Checkout Payments Using Contact Form 7 Pro**
+
 We have released the PRO version of this plugin with extra advantageous features added. PRO Version 1.0 Released.
 
 - Facility to import, export the list of entire 2Checkout unlimited Entries.
