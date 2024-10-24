@@ -31,6 +31,8 @@ We have released the PRO version of this plugin with extra advantageous features
 - Facility to import, export the list of entire 2Checkout unlimited Entries.
 - In the list of 2Checkout forms entry in the admin side, you can view payment transactions unlimited Entries.
 
+<strong>[Demo for Abandoned Contact Form 7 Pro](https://demo.zealousweb.com/wordpress-plugins/accept-2checkout-payments-using-contact-form-7/)</strong>
+
 # Installation
 1. Download the plugin zip file from WordPress.org plugin site to your desktop / PC
 2. If the file is downloaded as a zip archive, extract the plugin folder to your desktop.
