@@ -71,16 +71,16 @@ if ( !class_exists( 'CF72CH_Lib' ) ) {
 			$cf7_verify = $this->wpcf7_version();
 
 			if ( version_compare( $cf7_verify, '5.2' ) >= 0 ) {
-				add_filter( 'wpcf7_feedback_response',	array( $this, 'filter__cf72ch_wpcf7_ajax_json_echo' ), 20, 2 );
+				add_filter( 'wpcf7_feedback_response',	array( $this, 'filter__cf72ch_wpcf7_ajax_json_echo' ), 20, 2 );				
 			} else{
 				add_filter( 'wpcf7_ajax_json_echo',	array( $this, 'filter__cf72ch_wpcf7_ajax_json_echo' ), 20, 2 );
 			}
 
 		}
-
+		
 
 		/**
-		 * Update 2checkout Order status after payment done
+		 * Update 2checkout Order status after payment done 
 		 *
 		 * @method order__update_status
 		 *
@@ -89,7 +89,7 @@ if ( !class_exists( 'CF72CH_Lib' ) ) {
 		 * @return	boolean
 		 */
 		function order__update_status() {
-
+			
 			global $wpdb;
 
 			$metas = array(
@@ -119,10 +119,10 @@ if ( !class_exists( 'CF72CH_Lib' ) ) {
 
 						$order_info = $this->getOrderInfo( $post->_invoice_no, $merchant_code, $secret_key );
 
-						if( isset( $order_info['Status'] ) &&
-							isset( $order_info['OrderNo'] ) &&
-							$order_info['Status'] == 'COMPLETE' &&
-							$order_info['OrderNo'] != ''
+						if( isset( $order_info['Status'] ) && 
+							isset( $order_info['OrderNo'] ) && 
+							$order_info['Status'] == 'COMPLETE' && 
+							$order_info['OrderNo'] != '' 
 						) {
 
 							update_post_meta( $post->ID, '_transaction_status', sanitize_text_field( $order_info['Status'] ) );
@@ -189,7 +189,7 @@ if ( !class_exists( 'CF72CH_Lib' ) ) {
 				// CF7 posted data
 				$posted_data = $submission->get_posted_data();
 			}
-
+			
 			if ( !empty( $form_ID ) ) {
 
 				$use_2checkout = intval( get_post_meta( $form_ID, CF72CH_META_PREFIX . 'use_2checkout', true ) );
@@ -206,7 +206,7 @@ if ( !class_exists( 'CF72CH_Lib' ) ) {
 				$cancel_returnurl			= sanitize_text_field( get_post_meta( $form_ID, CF72CH_META_PREFIX . 'cancel_returnurl', true ) );
 				$country					= sanitize_text_field( get_post_meta( $form_ID, CF72CH_META_PREFIX . 'country', true ) );
 				$two_checkout_order_name	= sanitize_text_field( get_post_meta( $form_ID, CF72CH_META_PREFIX . 'two_checkout_order_name', true ) );
-
+				
 				$amount						= sanitize_text_field( get_post_meta( $form_ID, CF72CH_META_PREFIX . 'amount', true ) );
 				$quantity					= sanitize_text_field( get_post_meta( $form_ID, CF72CH_META_PREFIX . 'quantity', true ) );
 				$email						= sanitize_text_field( get_post_meta( $form_ID, CF72CH_META_PREFIX . 'customer_email', true ) );
@@ -279,7 +279,7 @@ if ( !class_exists( 'CF72CH_Lib' ) ) {
 
 				// Check whether 2checkout merchant_code & secret_key is not empty
 				if ( !empty( $merchant_code ) &&  !empty( $secret_key ) ) {
-
+					
 					if($payment_mode == 'sandbox'){
 						$testMode = 'TEST';
 					}else{
@@ -417,7 +417,7 @@ if ( !class_exists( 'CF72CH_Lib' ) ) {
 								"ExpirationMonth" => $twocheckout_expMonth,
 								"CCID" => trim( $twocheckout_card_CVV ),
 								"HolderName" => $twocheckout_card_holder_name,
-								"RecurringEnabled" => false,
+								"RecurringEnabled" => false,	
 								"Vendor3DSReturnURL" => ( ( !empty( $success_returnurl ) && $success_returnurl != "Select page"  ) ? ( get_permalink( $success_returnurl ) ) : get_permalink( $submission->get_meta('container_post_id') ) ),
       							"Vendor3DSCancelURL" => ( ( !empty( $cancel_returnurl ) && $cancel_returnurl != "Select page" ) ? ( get_permalink( $cancel_returnurl ) ) : get_permalink( $submission->get_meta('container_post_id') ) ),
 							)
@@ -425,13 +425,13 @@ if ( !class_exists( 'CF72CH_Lib' ) ) {
 					);
 
 					$post_json_encode = json_encode( $post_data );
-
+					
 					$place_order = $this->placeOrder( $merchant_code, $secret_key, $post_json_encode );
-
+					
 					if( isset( $place_order['RefNo'] )
 						&& !empty( $place_order['RefNo'] )
 					)
-					{
+					{	
 						$RefNo = $place_order['RefNo'];
 						$OrderNo = $place_order['OrderNo'];
 						$CustomerIP = $place_order['PaymentDetails']['CustomerIP'];
@@ -449,12 +449,12 @@ if ( !class_exists( 'CF72CH_Lib' ) ) {
 
 							$error_msg = implode(" ", $place_order['Errors'] );
 
-							$Status =  $error_case.' : '.$error_msg;
+							$Status =  $error_case.' : '.$error_msg;	
 
 							add_filter( 'wpcf7_skip_mail', array( $this, 'filter__wpcf7_skip_mail' ), 20 );
 							$_SESSION[ CF72CH_META_PREFIX . 'failed' . $form_ID ] = true;
 							$_SESSION[ CF72CH_META_PREFIX . 'form_message' . $form_ID ] = __( $Status );
-
+						
 							if ( !empty( $cancel_returnurl ) && $cancel_returnurl != "Select page" ) {
 
 								$redirect_url = add_query_arg(
@@ -491,10 +491,10 @@ if ( !class_exists( 'CF72CH_Lib' ) ) {
 							}
 
 							$post_status = 'pending';
-
+							
 						}
 
-
+						
 						$attachment = '';
 
 						if ( !empty( $submission->uploaded_files() ) ) {
@@ -524,7 +524,7 @@ if ( !class_exists( 'CF72CH_Lib' ) ) {
 						if ( !empty( $ch_post_id ) ) {
 
 							$stored_data = $posted_data;
-							unset( $stored_data['two_checkout'] );
+							unset( $stored_data['two_checkout'] );						
 
 							$total_amount =  $NetPrice.' '.$Currency;
 
@@ -532,9 +532,9 @@ if ( !class_exists( 'CF72CH_Lib' ) ) {
 								sanitize_text_field( add_option('_exceed_cf72ch', '1') );
 							}else{
 								$exceed_val = sanitize_text_field( get_option( '_exceed_cf72ch' ) ) + 1;
-								update_option( '_exceed_cf72ch', $exceed_val );
+								update_option( '_exceed_cf72ch', $exceed_val );								
 							}
-
+							
 							if ( !empty( sanitize_text_field( get_option( '_exceed_cf72ch' ) ) ) && sanitize_text_field( get_option( '_exceed_cf72ch' ) ) > $exceed_ct ) {
 								$stored_data['_exceed_num_cf72ch'] = '1';
 							}
@@ -553,7 +553,7 @@ if ( !class_exists( 'CF72CH_Lib' ) ) {
 							add_post_meta( $ch_post_id, '_form_data', serialize( $stored_data ) );
 							add_post_meta( $ch_post_id, '_transaction_response', json_encode( $place_order ) );
 							add_post_meta( $ch_post_id, '_transaction_status', sanitize_text_field( $Status_set_indb ) );
-							add_post_meta( $ch_post_id, '_attachment', sanitize_text_field( $attachment ) );
+							add_post_meta( $ch_post_id, '_attachment', sanitize_text_field( $attachment ) );							
 						}
 
 						add_filter( 'wpcf7_mail_tag_replaced_two_checkout*', function( $replaced, $submitted, $html, $mail_tag ) use ( $Status, $RefNo, $total_amount) {
@@ -603,7 +603,7 @@ if ( !class_exists( 'CF72CH_Lib' ) ) {
 							$_SESSION[ CF72CH_META_PREFIX . 'return_url' . $form_ID ] = "";
 
 						}
-
+						
 					}else{
 
 						add_filter( 'wpcf7_skip_mail', array( $this, 'filter__wpcf7_skip_mail' ), 20 );
@@ -624,7 +624,7 @@ if ( !class_exists( 'CF72CH_Lib' ) ) {
 						$_SESSION[ CF72CH_META_PREFIX . 'failed' . $form_ID ] = true;
 						$_SESSION[ CF72CH_META_PREFIX . 'field_error' . $form_ID ] = __( 'Due to Some technical issue, please try again!', 'accept-2checkout-payments-using-contact-form-7' );
 						return;
-				}
+				}				
 			}
 			return $submission;
 		}
@@ -659,7 +659,7 @@ if ( !class_exists( 'CF72CH_Lib' ) ) {
 
 			ob_start();
 
-			if ( empty( $invoice ) || empty( $form_id ) )
+			if ( empty( $invoice ) || empty( $form_id ) )				
 
 				return '<table class="cf72ch-transaction-details" align="center">' .
 					'<tr>'.
@@ -674,11 +674,11 @@ if ( !class_exists( 'CF72CH_Lib' ) ) {
 				$secret_key 	= esc_attr( get_post_meta( $form_id, CF72CH_META_PREFIX . 'secret_key', true ) );
 
 				$order_info = $this->getOrderInfo( $invoice, $merchant_code, $secret_key );
-
-				if( isset( $order_info['Status'] ) &&
-					isset( $order_info['OrderNo'] ) &&
-					$order_info['Status'] == 'COMPLETE' &&
-					$order_info['OrderNo'] != ''
+				
+				if( isset( $order_info['Status'] ) && 
+					isset( $order_info['OrderNo'] ) && 
+					$order_info['Status'] == 'COMPLETE' && 
+					$order_info['OrderNo'] != '' 
 				) {
 					$message = __( 'Payment Successfully Done.', 'accept-2checkout-payments-using-contact-form-7' );
 				}else{
@@ -689,7 +689,7 @@ if ( !class_exists( 'CF72CH_Lib' ) ) {
 					'<tr>'.
 						'<th align="left">' . __( 'Transaction Amount :', 'accept-2checkout-payments-using-contact-form-7' ) . '</th>'.
 						'<td align="left">' . $amount . '</td>'.
-					'</tr>' .
+					'</tr>' .					
 					'<tr>'.
 						'<th align="left">' . __( 'Invoice No :', 'accept-2checkout-payments-using-contact-form-7' ) . '</th>'.
 						'<td align="left">' . $invoice . '</td>'.
@@ -702,7 +702,7 @@ if ( !class_exists( 'CF72CH_Lib' ) ) {
 			}
 			return ob_get_clean();
 
-		}
+		}		
 
 		/**
 		 * Filter: Modify the contact form 7 response.
@@ -717,7 +717,7 @@ if ( !class_exists( 'CF72CH_Lib' ) ) {
 		function filter__cf72ch_wpcf7_ajax_json_echo( $response, $result ) {
 
 			$cf7_verify = $this->wpcf7_version();
-
+			
 			if (
 				   array_key_exists( 'contact_form_id' , $result )
 				&& array_key_exists( 'status' , $result )
@@ -745,7 +745,7 @@ if ( !class_exists( 'CF72CH_Lib' ) ) {
 				}
 
 			}
-
+			
 			if (
 				   array_key_exists( 'contact_form_id' , $result )
 				&& array_key_exists( 'status' , $result )
@@ -759,15 +759,14 @@ if ( !class_exists( 'CF72CH_Lib' ) ) {
 
 				foreach ($_SESSION[ CF72CH_META_PREFIX . 'field_error' . $result[ 'contact_form_id' ] ] as $key => $value) {
 					$field_error_message['into'] = 'span.wpcf7-form-control-wrap.'.$value;
-
-					if( $value == 'amount'){
+					
+					if( $key == 'amount' && $key != 0){
 						$field_error_message['message'] = __('Please enter amount or valid amount.', 'accept-2checkout-payments-using-contact-form-7');
-						$response[ 'message' ] = __('Please enter amount or valid amount.', 'accept-2checkout-payments-using-contact-form-7' );
 					}else{
 						$field_error_message['message'] = __('The field is required.', 'accept-2checkout-payments-using-contact-form-7');
 					}
 					$fields_msg[] = $field_error_message;
-				}
+				}				
 
 				if ( version_compare( $cf7_verify, '5.2' ) >= 0 ) {
 					$response[ 'invalid_fields' ] = $fields_msg;
@@ -789,7 +788,7 @@ if ( !class_exists( 'CF72CH_Lib' ) ) {
 				$response[ 'status' ] = 'mail_failed';
 				$response[ 'message' ] = $_SESSION[ CF72CH_META_PREFIX . 'form_tag_error' . $result[ 'contact_form_id' ] ];
 				unset( $_SESSION[ CF72CH_META_PREFIX . 'form_tag_error' . $result[ 'contact_form_id' ] ] );
-			}
+			}			
 
 			return $response;
 		}
@@ -826,7 +825,7 @@ if ( !class_exists( 'CF72CH_Lib' ) ) {
 		 *
 		 * @return html
 		 */
-
+		
 		function wpcf7_two_checkout_country_form_tag_handler( $tag ) {
 
 			if ( empty( $tag->name ) ) {
@@ -863,7 +862,7 @@ if ( !class_exists( 'CF72CH_Lib' ) ) {
 			$form_id = $form_instance->id();
 
 			$use_2checkout	= get_post_meta( $form_id, CF72CH_META_PREFIX . 'use_2checkout', true );
-
+			
 			if ( empty( $use_2checkout ) ) {
 				return;
 			}
@@ -906,9 +905,9 @@ if ( !class_exists( 'CF72CH_Lib' ) ) {
 			return ob_get_clean();
 		}
 
-
+		
 		/**
-		 *
+		 * 
 		 * @method Get Country
 		 *
 		 * @param array
@@ -1432,7 +1431,7 @@ if ( !class_exists( 'CF72CH_Lib' ) ) {
 		 *
 		 * @return string
 		 */
-
+		
 		function getUserIpAddr() {
 			$ip = false;
 
@@ -1610,7 +1609,7 @@ if ( !class_exists( 'CF72CH_Lib' ) ) {
 				$foo = json_decode( $response['body'], true );
 
 				return  $foo;
-			}
+			}			
 		}
 
 		/**
@@ -1619,16 +1618,16 @@ if ( !class_exists( 'CF72CH_Lib' ) ) {
 		 * @method wpcf7_version
 		 *
 		 * @return string
-		 */
+		 */			
 		function wpcf7_version() {
 
-			$wpcf7_path = plugin_dir_path( CF72CH_DIR ) . 'contact-form-7/wp-contact-form-7.php';
+			$wpcf7_path = plugin_dir_path( CF72CH_DIR ) . 'contact-form-7/wp-contact-form-7.php'; 
 
 			if( ! function_exists('get_plugin_data') ){
 				require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 			}
 			$plugin_data = get_plugin_data( $wpcf7_path );
-
+					
 			return $plugin_data['Version'];
 		}
 	}
