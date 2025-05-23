@@ -37,7 +37,7 @@ This plugin helps you to accept payments on your Contact Form 7 using 2Checkout 
 * You can set ‘Success Return URL’ and ‘Cancel Return URL’ pages to redirect after the payment transaction. You can display payment details using shortcode adding in the Success & Cancel page [two-checkout-details].
 * You can use the Country field Tag option to display country in the drop-down; if you are working with the custom approach, you need to set the drop-down value in ISO 3166 ( Examples: GB, IE, and DE ), so we prefer to use our tag to display country list.
 
-<strong>[Demo for Abandoned Contact Form 7](https://demo.zealousweb.com/wordpress-plugins/accept-2checkout-payments-using-contact-form-7/)</strong>
+<strong>[Demo for Accept 2Checkout Payments Using Contact Form 7](https://demo.zealousweb.com/wordpress-plugins/accept-2checkout-payments-using-contact-form-7/)</strong>
 
 = Features of Accept 2Checkout Payments Using Contact Form 7 Pro =
 
@@ -47,7 +47,7 @@ We have released the PRO version of this plugin with extra advantageous features
 * In the list of 2Checkout forms entry in the admin side, you can view payment transactions unlimited Entries.
 
 <strong>[Get more information of Pro version here](https://store.zealousweb.com/accept-2checkout-payments-using-contact-form-7-pro)</strong>
-<strong>[Demo for Abandoned Contact Form 7](https://demo.zealousweb.com/wordpress-plugins/accept-2checkout-payments-using-contact-form-7-pro/)</strong>
+<strong>[Demo for Accept 2Checkout Payments Using Contact Form 7 Pro](https://demo.zealousweb.com/wordpress-plugins/accept-2checkout-payments-using-contact-form-7-pro/)</strong>
 
 == OUR OTHER PLUGINS ==
 
