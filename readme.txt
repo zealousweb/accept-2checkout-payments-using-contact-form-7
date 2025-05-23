@@ -114,7 +114,7 @@ To display 2checkout payment information after successful payment, you need to a
 == Changelog ==
 
 = 1.5 =
-* Minor Adjustments regarding workflow
+* Minor changes - Doc update
 
 = 1.4 =
 * Minor Adjustments regarding workflow
