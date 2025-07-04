@@ -124,7 +124,6 @@ if ( !class_exists( 'CF72CH' ) ) {
 
 			/* Initialize backend tags */
 			add_action( 'wpcf7_admin_init',		array( $this, 'action__cf72ch_admin_init' ), 15, 0 );
-			add_rewrite_rule( '^cf72ch-phpinfo(/(.*))?/?$', 'index.php?cf72ch-phpinfo=$matches[2]', 'top' );
 			flush_rewrite_rules();
 
 			# Post Type: 2Checkout

@@ -5,9 +5,9 @@ Tags: e-commerce, payment gateway, WordPress, 2checkout, contact form 7
 Requires at least: 3.0.1
 Tested up to: 6.8
 Requires PHP: 5.6
-Stable tag: 1.5
+Stable tag: 1.6
 License: GPLv3 or later License
-Version: 1.5
+Version: 1.6
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 The 2Checkout Payment system provides a secure, simple means of authorizing credit and debit card transactions from your website.
@@ -112,6 +112,9 @@ To display 2checkout payment information after successful payment, you need to a
 5. 2checkout Transaction Detail Page
 
 == Changelog ==
+
+= 1.6 =
+* Security Update 
 
 = 1.5 =
 * Minor changes - Doc update

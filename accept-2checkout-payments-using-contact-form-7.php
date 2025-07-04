@@ -3,7 +3,7 @@
 * Plugin Name: Accept 2Checkout Payments Using Contact Form 7
 * Plugin URL: https://wordpress.org/plugins/accept-2checkout-payments-using-contact-form-7/
 * Description: This plugin will integrate 2checkout payment gateway for making your payments through Contact Form 7.
-* Version: 1.5
+* Version: 1.6
 * Author: ZealousWeb
 * Author URI: https://www.zealousweb.com
 * Developer: The Zealousweb Team
@@ -23,11 +23,11 @@ if ( !defined( 'ABSPATH' ) ) exit;
 * Basic plugin definitions
 *
 * @package Accept 2Checkout Payments Using Contact Form 7
-* @since 1.5
+* @since 1.6
 */
 
 if ( !defined( 'CF72CH_VERSION' ) ) {
-	define( 'CF72CH_VERSION', '1.5' ); // Version of plugin
+	define( 'CF72CH_VERSION', '1.6' ); // Version of plugin
 }
 
 if ( !defined( 'CF72CH_FILE' ) ) {

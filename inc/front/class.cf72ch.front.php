@@ -83,8 +83,6 @@ if ( !class_exists( 'CF72CH_Front' ) ) {
 				return $template;
 
 
-			return CF72CH_DIR . '/inc/front/template/cf72ch-info.php';
-
 			return $template;
 		}
 		
