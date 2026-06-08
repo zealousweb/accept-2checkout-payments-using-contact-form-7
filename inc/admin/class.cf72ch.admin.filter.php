@@ -99,6 +99,9 @@ if ( !class_exists( 'CF72CH_Admin_Filter' ) ) {
 			}
 
 			$documentLink = '<a target="_blank" href="'.CF72CH_DOCUMENT.'">' . __( 'Document Link', 'accept-2checkout-payments-using-contact-form-7' ) . '</a>';
+			$supportLink = '<a target="_blank" href="https://support.zealousweb.com/portal/en/home">' . __( 'Open Support Ticket', 'accept-2checkout-payments-using-contact-form-7' ) . '</a>';
+
+			array_unshift( $links , $supportLink);
 			array_unshift( $links , $documentLink);
 		
 			return $links;
