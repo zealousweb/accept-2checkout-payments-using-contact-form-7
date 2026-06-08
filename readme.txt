@@ -3,11 +3,11 @@ Contributors: zealopensource
 Donate link: http://www.zealousweb.com/payment/
 Tags: e-commerce, payment gateway, WordPress, 2checkout, contact form 7
 Requires at least: 3.0.1
-Tested up to: 6.9
+Tested up to: 7.0
 Requires PHP: 5.6
-Stable tag: 1.7
+Stable tag: 1.8
 License: GPLv3 or later License
-Version: 1.7
+Version: 1.8
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 The 2Checkout Payment system provides a secure, simple means of authorizing credit and debit card transactions from your website.
@@ -112,6 +112,9 @@ To display 2checkout payment information after successful payment, you need to a
 5. 2checkout Transaction Detail Page
 
 == Changelog ==
+
+= 1.8 =
+* Added a new "Open Support Ticket" button to provide quick and direct access to support.
 
 = 1.7 =
 * Tested with the latest version of WordPress (6.9). 
